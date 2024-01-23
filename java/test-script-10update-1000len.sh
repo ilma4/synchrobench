@@ -4,7 +4,7 @@ DIR="upd10_size1000"
 mkdir -p "$DIR"
 
 
-for alg in CoarseGrainedListIntSet  HandOverHandListIntSet  LazyLinkedListSortedSet
+for alg in CoarseGrainedListBasedSet  HandOverHandListIntSet  LazyLinkedListSortedSet
 do
   echo "Who I am: $alg on `uname -n`"
   echo "started on" `date`
