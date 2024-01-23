@@ -22,10 +22,10 @@ do
   esac
   echo "Who I am: $OUTPUT on `uname -n`"
   echo "started on" `date`
-	for j in 0 10
+  rm "$DIR/$i.log"
+	for j in `seq 10`
 	do
-		echo "→ $OUTPUT	$i	$j"
-		java -cp bin contention.benchmark.Test -b linkedlists.lockbased.$OUTPUT -d 2000 -t "$THREADS" -u $j -i 1000 -r 2000 -W 0 | grep Throughput > "$DIR/$i.log"
+		java -cp bin contention.benchmark.Test -b linkedlists.lockbased.$OUTPUT -d 2000 -t "$THREADS" -u 10 -i 1000 -r 2000 -W 0 | grep Throughput >> "$DIR/$i.log"
 #		echo "→ $OUTPUT	$i	$j	without -W 0"
 #		java -cp bin contention.benchmark.Test -b linkedlists.lockbased.$OUTPUT -d 3000 -t $i -u $j -i 1024 -r 2048 | grep Throughput
 	done 
