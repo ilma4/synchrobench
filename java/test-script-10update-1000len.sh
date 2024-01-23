@@ -7,21 +7,21 @@ THREADS=12
 
 for i in 1 2 3
 do
-case $1 in
-"1" )	echo CoarseGrainedListIntSet
-    OUTPUT="CoarseGrainedListBasedSet"
-;;
-"2" )	echo HandOverHandListIntSet
-    OUTPUT="HandOverHandListIntSet"
-;;
-"3" )	echo LazyLinkedListSortedSet
-    OUTPUT="LazyLinkedListSortedSet"
-;;
-*)		echo "Specify algorithm"
-    exit 0
-esac
-echo "Who I am: $OUTPUT on `uname -n`"
-echo "started on" `date`
+  case $1 in
+  "1" )	echo CoarseGrainedListIntSet
+      OUTPUT="CoarseGrainedListBasedSet"
+  ;;
+  "2" )	echo HandOverHandListIntSet
+      OUTPUT="HandOverHandListIntSet"
+  ;;
+  "3" )	echo LazyLinkedListSortedSet
+      OUTPUT="LazyLinkedListSortedSet"
+  ;;
+  *)		echo "Specify algorithm"
+      exit 0
+  esac
+  echo "Who I am: $OUTPUT on `uname -n`"
+  echo "started on" `date`
 	for j in 0 10
 	do
 		echo "→ $OUTPUT	$i	$j"
