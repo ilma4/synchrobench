@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir upd10_size1000
-cd upd10_size1000 || echo "Cant create dir" && exit 1
+DIR="upd10_size1000"
+mkdir -p "$DIR"
 
 THREADS=12
 
@@ -25,7 +25,7 @@ do
 	for j in 0 10
 	do
 		echo "→ $OUTPUT	$i	$j"
-		java -cp bin contention.benchmark.Test -b linkedlists.lockbased.$OUTPUT -d 2000 -t "$THREADS" -u $j -i 1000 -r 2000 -W 0 | grep Throughput > "$i.log"
+		java -cp bin contention.benchmark.Test -b linkedlists.lockbased.$OUTPUT -d 2000 -t "$THREADS" -u $j -i 1000 -r 2000 -W 0 | grep Throughput > "$DIR/$i.log"
 #		echo "→ $OUTPUT	$i	$j	without -W 0"
 #		java -cp bin contention.benchmark.Test -b linkedlists.lockbased.$OUTPUT -d 3000 -t $i -u $j -i 1024 -r 2048 | grep Throughput
 	done 
