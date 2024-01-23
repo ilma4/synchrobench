@@ -7,7 +7,7 @@ THREADS=12
 
 for i in 1 2 3
 do
-  case $1 in
+  case $i in
   "1" )	echo CoarseGrainedListIntSet
       OUTPUT="CoarseGrainedListBasedSet"
   ;;
