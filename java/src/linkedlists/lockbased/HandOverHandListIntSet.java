@@ -99,25 +99,6 @@ public class HandOverHandListIntSet extends AbstractCompositionalIntSet {
         }
     }
 
-/*
-    @Override
-    public boolean containsInt(int item) {
-        Node curr = head;
-        curr.lock();
-        try {
-            while (curr.key < item) {
-                Node next = curr.next;
-                next.lock();
-                curr.unlock();
-                curr = next;
-            }
-            return curr.key == item;
-        } finally {
-            curr.unlock();
-        }
-    }
-*/
-
     private static class Node {
 
         public int key;
